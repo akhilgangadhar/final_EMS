@@ -1,0 +1,20 @@
+2018-10-06-main-ERROR-root      :Invalid column index
+2018-10-06-main-ERROR-root      :Invalid column index
+2018-10-06-main-ERROR-root      :ORA-00911: invalid character
+
+2018-10-06-main-ERROR-root      :exception occured 
+com.cg.ems.exception.EMSException: Not valid format
+	at com.cg.ems.service.EmployeeServiceImpl.viewEmployeeByFname(EmployeeServiceImpl.java:44)
+	at com.cg.ems.ui.UserConsole.getEmployeeByFName(UserConsole.java:294)
+	at com.cg.ems.ui.UserConsole.searchByFName(UserConsole.java:240)
+	at com.cg.ems.ui.UserConsole.searchEmployee(UserConsole.java:87)
+	at com.cg.ems.ui.UserConsole.start(UserConsole.java:51)
+	at com.cg.ems.ui.MainUI.main(MainUI.java:46)
+2018-10-06-main-ERROR-root      :ORA-00921: unexpected end of SQL command
+
+2018-10-06-main-ERROR-root      :ORA-01427: single-row subquery returns more than one row
+
+2018-10-06-main-INFO -root      :Record Found Successfully
+2018-10-06-main-INFO -root      :Employee details updated successfully:
+2018-10-06-main-INFO -root      :Employee details added successfully:
+2018-10-06-main-ERROR-root      :Invalid column index
