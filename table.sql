@@ -43,16 +43,20 @@ Emp_Contact_Num VARCHAR2(15)
 );
 
 create sequence emp_id_sequence
-start with 100
+start with 100000
 increment by 1
 nocache;
 
-INSERT INTO employee values(emp_id_sequence.NEXTVAL,'Soumya','Jena','05-JUNE-1996','20-SEP-2017',102,'M5','Manager',90000,'F','U','Bangalore','9491043672');
-INSERT INTO employee values(emp_id_sequence.NEXTVAL,'Nilendu','Das','28-AUG-1996','20-SEP-2017',100,'M2','Analyst',24000,'F','U','Bangalore','8714333996');
-INSERT INTO employee values(emp_id_sequence.NEXTVAL,'Akhil','Gangadhar','12-JAN-1996','20-SEP-2017',101,'M4','Consultant',55000,'F','U','Kolkata','8136912198');
-INSERT INTO employee values(emp_id_sequence.NEXTVAL,'Rituraj','Das','12-MAY-1996','25-SEP-2017',103,'M2','Analyst',24000,'F','U','Hyderabad','7736737369');
-INSERT INTO employee values(emp_id_sequence.NEXTVAL,'Pranay','Bikash','21-SEP-1996','20-OCT-2017',100,'M2','Analyst',24000,'M','U','Mumbai','9567037017');
-INSERT INTO employee values(emp_id_sequence.NEXTVAL,'Ankit','Bazarbaruah','10-MAY-1996','20-SEP-2017',102,'M2','Analyst',24000,'M','U','Bangalore','9491043672');
+INSERT INTO employee values(emp_id_sequence.NEXTVAL,'Soumya','Jena','05-JUNE-1996','20-SEP-2017',102,'M1','Associate',18000,'FEMALE','Single','Bangalore','9491043672');
+INSERT INTO employee values(emp_id_sequence.NEXTVAL,'Nilendu','Das','28-AUG-1996','20-SEP-2017',100,'M1','Associate',18000,'MALE','Single','Bangalore','8714333996');
+INSERT INTO employee values(emp_id_sequence.NEXTVAL,'Akhil','Gangadhar','12-JAN-1996','20-SEP-2017',101,'M4','Consultant',55000,'Single','U','Kolkata','8136912198');
+INSERT INTO employee values(emp_id_sequence.NEXTVAL,'Rituraj','Das','12-MAY-1996','25-SEP-2017',103,'M3','Associate Consultant',40000,'MALE','Single','Hyderabad','7736737369');
+INSERT INTO employee values(emp_id_sequence.NEXTVAL,'Pranay','Bikash','21-SEP-1996','20-OCT-2017',100,'M2','Analyst',24000,'MALE','Single','Mumbai','9567037017');
+INSERT INTO employee values(emp_id_sequence.NEXTVAL,'Ankit','Bazarbaruah','10-MAY-1996','20-SEP-2017',102,'M6','Senior Manager',100000,'MALE','Single','Bangalore','9491043672');
+INSERT INTO employee values(emp_id_sequence.NEXTVAL,'Ankita','Nath','11-SEP-1995','20-SEP-2017',102,'M2','Analyst',24000,'MALE','Married','Kolkata','9491045662');
+INSERT INTO employee values(emp_id_sequence.NEXTVAL,'Akhila','Agarwal','12-AUG-1996','20-SEP-2017',102,'M7','Director',120000,'MALE','Separated','Mumbai','9491123654');
+INSERT INTO employee values(emp_id_sequence.NEXTVAL,'Pronoya','Begum','13-JUN-1994','20-SEP-2017',102,'M2','Analyst',24000,'MALE','Single','Pune','949106543');
+INSERT INTO employee values(emp_id_sequence.NEXTVAL,'Angel','Priya','14-FEB-1994','20-SEP-2017',102,'M5','Manager',90000,'MALE','Married','Chennai','9491023456');
 
 INSERT INTO Department VALUES(100,'IT');
 INSERT INTO Department VALUES(101,'Sales');
