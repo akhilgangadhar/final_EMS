@@ -40,6 +40,16 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 
 		return employee;
 	}
+	
+		/*******************************************************************************************************
+		 - Function Name	:	addEmployee(Employee employee)
+		 - Input Parameters	:	Employee employee
+		 - Return Type		:	String
+		 - Throws			:  	Employee Management System
+		 - Author			:	Code Rangers
+		 - Creation Date	:	09/10/2018
+		 - Description		:	Adding Employee
+		 ********************************************************************************************************/
 
 	@Override
 	public String addEmployee(Employee employee) throws EMSException {
@@ -127,6 +137,16 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 
 	}
 
+	/*******************************************************************************************************
+	 - Function Name	:	viewEmployeeById(String empId)
+	 - Input Parameters	:	String empId
+	 - Return Type		:	List
+	 - Throws			:  	Employee Management System
+	 - Author			:	Code Rangers
+	 - Creation Date	:	09/10/2018
+	 - Description		:	Showing Employee
+	 ********************************************************************************************************/
+
 	@Override
 	public List<Employee> viewEmployeeById(String empId) throws EMSException {
 		
@@ -169,6 +189,16 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 			return employeeList;
 		
 	}
+	
+	/*******************************************************************************************************
+	 - Function Name	:	viewEmployeeByFname(String firstName)
+	 - Input Parameters	:	String firstName
+	 - Return Type		:	List
+	 - Throws			:  	Employee Management System
+	 - Author			:	Code Rangers
+	 - Creation Date	:	09/10/2018
+	 - Description		:	Showing Employee By First name
+	 ********************************************************************************************************/
 
 	@Override
 	public List<Employee> viewEmployeeByFname(String firstName) throws EMSException {
@@ -210,6 +240,16 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 		else
 			return employeeList;
 	}
+	
+	/*******************************************************************************************************
+	 - Function Name	:	viewEmployeeByLname(String lastName)
+	 - Input Parameters	:	String lastName
+	 - Return Type		:	List
+	 - Throws			:  	Employee Management System
+	 - Author			:	Code Rangers
+	 - Creation Date	:	09/10/2018
+	 - Description		:	Showing Employee By Last Name
+	 ********************************************************************************************************/
 
 	@Override
 	public List<Employee> viewEmployeeByLname(String lastName) throws EMSException {
@@ -251,6 +291,16 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 		else
 			return employeeList;
 	}
+	
+	/*******************************************************************************************************
+	 - Function Name	:	viewEmployeeByDeptName(String deptName)
+	 - Input Parameters	:	String deptName
+	 - Return Type		:	List
+	 - Throws			:  	Employee Management System
+	 - Author			:	Code Rangers
+	 - Creation Date	:	09/10/2018
+	 - Description		:	Showing Employees by Department Name
+	 ********************************************************************************************************/
 
 	@Override
 	public List<Employee> viewEmployeeByDeptName(String deptName)
@@ -293,6 +343,16 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 		else
 			return employeeList;
 	}
+	
+	/*******************************************************************************************************
+	 - Function Name	:	viewEmployeeByGrade(String empGrade)
+	 - Input Parameters	:	String empGrade
+	 - Return Type		:	List
+	 - Throws			:  	Employee Management System
+	 - Author			:	Code Rangers
+	 - Creation Date	:	09/10/2018
+	 - Description		:	Showing Employees by Grade
+	 ********************************************************************************************************/
 
 	@Override
 	public List<Employee> viewEmployeeByGrade(String empGrade)
@@ -335,6 +395,16 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 		else
 			return employeeList;
 	}
+	
+	/*******************************************************************************************************
+	 - Function Name	:	viewEmployeeByMaritalStatus(String maritalStatus)
+	 - Input Parameters	:	String maritalStatus
+	 - Return Type		:	List
+	 - Throws			:  	Employee Management System
+	 - Author			:	Code Rangers
+	 - Creation Date	:	09/10/2018
+	 - Description		:	Showing Employees by Marital Status
+	 ********************************************************************************************************/
 
 	@Override
 	public List<Employee> viewEmployeeByMaritalStatus(String maritalStatus)
@@ -379,6 +449,16 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 			return employeeList;
 	}
 	
+	/*******************************************************************************************************
+	 - Function Name	:	viewEmployeeByWildCard(String searchString)
+	 - Input Parameters	:	String searchString
+	 - Return Type		:	List
+	 - Throws			:  	Employee Management System
+	 - Author			:	Code Rangers
+	 - Creation Date	:	09/10/2018
+	 - Description		:	Showing Employees by Wild Card
+	 ********************************************************************************************************/
+	
 	@Override
 	public List<Employee> viewEmployeeByWildCard(String searchString) throws EMSException {
 		Connection connection = DBConnection.getInstance().getConnection();
@@ -420,6 +500,16 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 		else
 			return employeeList;
 	}
+	
+	/*******************************************************************************************************
+	 - Function Name	:	updateEmployeeById(Employee employee)
+	 - Input Parameters	:	Employee employee
+	 - Return Type		:	List
+	 - Throws			:  	Employee Management System
+	 - Author			:	Code Rangers
+	 - Creation Date	:	09/10/2018
+	 - Description		:	Updating Employees by Employee ID
+	 ********************************************************************************************************/
 
 	@Override
 	public Employee updateEmployeeById(Employee employee) throws EMSException {
@@ -469,6 +559,16 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 		}
 
 	}
+	
+	/*******************************************************************************************************
+	 - Function Name	:	retriveAllDetails()
+	 - Input Parameters	:	Employee employee
+	 - Return Type		:	List
+	 - Throws			:  	Employee Management System
+	 - Author			:	Code Rangers
+	 - Creation Date	:	09/10/2018
+	 - Description		:	Showing All Employees
+	 ********************************************************************************************************/
 
 	@Override
 	public List<Employee> retriveAllDetails() throws EMSException {
@@ -512,6 +612,16 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 		else
 			return employeeList;
 	}
+	
+	/*******************************************************************************************************
+	 - Function Name	:	retriveAllDetails()
+	 - Input Parameters	:	Employee employee
+	 - Return Type		:	List
+	 - Throws			:  	Employee Management System
+	 - Author			:	Code Rangers
+	 - Creation Date	:	09/10/2018
+	 - Description		:	Showing All Employees
+	 ********************************************************************************************************/
 
 	@Override
 	public Employee viewEmployeeById1(String empId) throws EMSException {
