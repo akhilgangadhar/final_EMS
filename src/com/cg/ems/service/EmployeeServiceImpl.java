@@ -17,6 +17,7 @@ import com.cg.ems.exception.EMSException;
 public class EmployeeServiceImpl implements IEmployeeService {
 
 	IEmployeeDao employeeDao;
+	public static final int invalidID=9999999;
 
 	@Override
 	public String addEmployee(Employee employee) throws EMSException {
@@ -28,13 +29,25 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
 	@Override
 	public List<Employee> viewEmployeeById(String empId) throws EMSException {
-		employeeDao = new EmployeeDaoImpl();
 		List<Employee> employee = null;
+		Employee emp=new Employee();
+		if(!isValidID(empId)){
+			employee=new ArrayList<>();
+			emp.setEmpId(invalidID);
+			employee.add(emp);
+			//throw new EMSException("Invalid employee Id.");
+			return employee;
+		}
+		else{
+		employeeDao = new EmployeeDaoImpl();
+		
 		employee = employeeDao.viewEmployeeById(empId);
 		return employee;
+		}
 	}
 	
 	public Employee viewEmployeeById1(String empId) throws EMSException {
+		
 		employeeDao = new EmployeeDaoImpl();
 		Employee employee = null;
 		employee = employeeDao.viewEmployeeById1(empId);
@@ -43,17 +56,35 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
 	@Override
 	public List<Employee> viewEmployeeByFname(String firstName) throws EMSException {
-		employeeDao = new EmployeeDaoImpl();
 		List<Employee> employee = null;
-		employee = employeeDao.viewEmployeeByFname(firstName);
+		Employee emp=new Employee();
+		if(!isValidFirstName1(firstName)){
+			employee=new ArrayList<>();
+			emp.setEmpId(invalidID);
+			employee.add(emp);
+			//throw new EMSException("Invalid Firstname.");
+		}
+		else{
+			employeeDao = new EmployeeDaoImpl();		
+			employee = employeeDao.viewEmployeeByFname(firstName);
+		}
 		return employee;
 	}
 
 	@Override
 	public List<Employee> viewEmployeeByLname(String lastName) throws EMSException {
-		employeeDao = new EmployeeDaoImpl();
 		List<Employee> employee = null;
-		employee = employeeDao.viewEmployeeByLname(lastName);
+		Employee emp=new Employee();
+		if(!isValidLastName1(lastName)){
+			employee=new ArrayList<>();
+			emp.setEmpId(invalidID);
+			employee.add(emp);
+			//throw new EMSException("Invalid Firstname.");
+		}
+		else{
+			employeeDao = new EmployeeDaoImpl();		
+			employee = employeeDao.viewEmployeeByLname(lastName);
+		}
 		return employee;
 	}
 
@@ -159,8 +190,11 @@ public class EmployeeServiceImpl implements IEmployeeService {
 			throw new EMSException(validationErrors + "");
 	}
 
-	public boolean isValidID(){
-		return true;
+	public boolean isValidID(String id){
+		Pattern namePattern = Pattern.compile("^[0-9]{1,6}$");
+		
+		Matcher nameMatcher = namePattern.matcher(id);
+		return nameMatcher.matches();
 	}
 	
 	public boolean isValidName(String employeeName) {
@@ -175,11 +209,23 @@ public class EmployeeServiceImpl implements IEmployeeService {
 		Matcher nameMatcher = firstNamePattern.matcher(firstName);
 		return nameMatcher.matches();
 	}
+	public boolean isValidFirstName1(String firstName){
+		Pattern firstNamePattern = Pattern.compile("^[a-zA-Z\\s]+$");
+		Matcher nameMatcher = firstNamePattern.matcher(firstName);
+		return nameMatcher.matches();
+		
+	}
 
 	public boolean isValidLastName(String lastName) {
 		Pattern lastNamePattern = Pattern.compile("^[A-Z]{1}[A-Za-z]{3,}$");
 		Matcher nameMatcher = lastNamePattern.matcher(lastName);
 		return nameMatcher.matches();
+	}
+	public boolean isValidLastName1(String lastName){
+		Pattern firstNamePattern = Pattern.compile("^[a-zA-Z\\s]+$");
+		Matcher nameMatcher = firstNamePattern.matcher(lastName);
+		return nameMatcher.matches();
+		
 	}
 
 	public boolean isValidDOB(Date dob) throws EMSException {
