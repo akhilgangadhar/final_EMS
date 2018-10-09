@@ -189,12 +189,12 @@ public class UserConsole {
 
 		if (emplList != null) {
 			Iterator<Employee> i = emplList.iterator();
-			if(i.next().getEmpId()!=9999999)
+			if(emplList.get(0).getEmpId()!=9999999)
 			while (i.hasNext()) {
 				displayEmployee(i.next());
 			}
 			else{
-				flag=false;
+				//flag=false;
 				System.err.println("Invalid Last Name.");
 			}
 		} else {
@@ -213,12 +213,13 @@ public class UserConsole {
 
 		if (emplList != null) {
 			Iterator<Employee> i = emplList.iterator();
-			if(i.next().getEmpId()!=9999999)
+			if(emplList.get(0).getEmpId()!=9999999){
 			while (i.hasNext()) {
 				displayEmployee(i.next());
 			}
+			}
 			else{
-				flag=false;
+				//flag=false;
 				System.err.println("Invalid First Name.");
 			}
 		} else {
@@ -238,12 +239,12 @@ public class UserConsole {
 
 		if (emplList != null) {
 			Iterator<Employee> i = emplList.iterator();
-			if(i.next().getEmpId()!=9999999)
+			if(emplList.get(0).getEmpId()!=9999999)
 			while (i.hasNext()) {
 				displayEmployee(i.next());
 			}
 			else{
-				flag=false;
+				//flag=false;
 				System.err.println("Invalid employee ID.");
 			}
 				
