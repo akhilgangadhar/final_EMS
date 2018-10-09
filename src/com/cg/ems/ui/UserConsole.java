@@ -23,6 +23,7 @@ public class UserConsole {
 	private IEmployeeService employeeService = null;
 	private Logger logger = Logger.getRootLogger();
 	private String userId;
+	public static boolean flag=true;
 
 	public UserConsole(String user, String userId) {
 		this.user = user;
@@ -49,7 +50,7 @@ public class UserConsole {
 
 			case "1":
 				searchEmployee();
-			case "4":
+			case "2":
 				System.out.print("Thank you!!");
 				System.exit(0);
 				break;
@@ -188,8 +189,13 @@ public class UserConsole {
 
 		if (emplList != null) {
 			Iterator<Employee> i = emplList.iterator();
+			if(i.next().getEmpId()!=9999999)
 			while (i.hasNext()) {
 				displayEmployee(i.next());
+			}
+			else{
+				flag=false;
+				System.err.println("Invalid Last Name.");
 			}
 		} else {
 			System.err.println("There are no employee details associated with given employee last name "
@@ -207,8 +213,13 @@ public class UserConsole {
 
 		if (emplList != null) {
 			Iterator<Employee> i = emplList.iterator();
+			if(i.next().getEmpId()!=9999999)
 			while (i.hasNext()) {
 				displayEmployee(i.next());
+			}
+			else{
+				flag=false;
+				System.err.println("Invalid First Name.");
 			}
 		} else {
 			System.err.println("There are no employee details associated with given employee first name "
@@ -227,11 +238,18 @@ public class UserConsole {
 
 		if (emplList != null) {
 			Iterator<Employee> i = emplList.iterator();
+			if(i.next().getEmpId()!=9999999)
 			while (i.hasNext()) {
 				displayEmployee(i.next());
 			}
+			else{
+				flag=false;
+				System.err.println("Invalid employee ID.");
+			}
+				
 		} else {
-			System.err.println("There are no employee details associated with given employee id "
+			
+		System.err.println("There are no employee details associated with given employee id "
 							+ empId);
 		}
 	}
@@ -330,6 +348,7 @@ public class UserConsole {
 
 	public void displayEmployee(Employee employee) {
 
+	
 		System.out.println("------------Employee Details---------- ");
 
 		System.out.println("Employee Id : " + employee.getEmpId());
@@ -346,5 +365,7 @@ public class UserConsole {
 		System.out.println("Home Address : " + employee.getHomeAddress());
 		System.out.println("Contact Number : " + employee.getContactNo());
 		System.out.println("-------------------------------------");
+		
+		
 	}
 }
